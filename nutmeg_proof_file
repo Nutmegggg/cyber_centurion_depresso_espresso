@@ -2,23 +2,24 @@
 
 #contents
 - average stuff + explanations
-- debian crap
 - nutmeg proof checklist
+- tips + helpful commands
 
 #average stuff + explanations
-
-
-#debian crap
-
+- ssh - how to get in
+  sudo nano /etc/ssh/sshd_config
+  
+- nano (( file editor in terminal )) - how to save a file
+ press control x -> y -> enter -> enter ((again))
 
 #nutmeg proof checklist
-1 Do forensics questions on Desktop
+1 Do forensics questions on Desktop ((suffer))
 Lsof -i -P -n
 Sudo ss -ln | grep tcp
-Sudo lsof -i:<port>
+Sudo lsof -i: *insert port*
 
-2 Updates
-Check for security updates
+2 Updates ((my thing))
+Check for security updates - type settings into the search applications area
 Daily updates
 Run update (do this later)
 
@@ -34,11 +35,11 @@ Optional, this may be included
 Sudo apt install clamscan
 Sudo clamav
 
-5 Ssh permit root login no
+5 Ssh permit root login -> no
 Sudo nano /etc/ssh/sshd_config
-Sudo vi “ “ “ “
+permit empty passwords -> no
 
-6 User accounts and admins administration X 
+6 User accounts and admins administration ((yay))
 Remove unwanted accounts
 Remove non approved admins
 Make sure admins are admins
@@ -47,8 +48,9 @@ Change passwords to more secure passwords
 7 Make the account and group required
 Configurate everything
 Password set with next login unless said otherwise
+To make group use - "group add"
 
-8 Update programs
+8 Update programs - sudo apt update -> sudo apt upgrade
 Update ssh
 Update firefox and more…
 
@@ -65,7 +67,7 @@ Warn websites add ons
 Block dangerous content
 No cookies
 
-11 PAM files
+11 PAM files (( gonna force Max to do this one ))
 Cd /etc/pam.d
 Sudo apt install libpam-cracklib
 Sudo nano common-password
@@ -82,7 +84,8 @@ Sudo nano common-auth
 	deny sets failed login attempts
   
 12 Look for media files and hidden files + unwanted files
-Delete media files
+how to locate files - sudo locate *insert file* ((remember to add *. in front of the file type, if searching for a file type))
+Delete media files - "rm -rf *insert file*"
 locate *.mp3
 locate *.jpg
 locate *.png, .mov, .mp4, .avi, .mpg, .mpeg, .flac, .m4a, .flv, .ogg, .gif, .jpeg
@@ -96,18 +99,18 @@ Aircrack
 Ophcrack
 Wireshark
 Hydra
-Etc 
+etc 
 
-14 Check the start-up apps
+14 Check the start-up apps 
 
-15 make sure the etc/passwd file isnt accessible without admin/root permission
+15 make sure the etc/passwd file isnt accessible without admin/root permission (( Max thing ))
 
 16 Remove guest account
 sudo nano /etc/lightdm/users.conf
 “allow-guest=false”
 Sudo service lightdm restart
 
-17 Check and disable unwanted/non vital services
+17 Check and disable unwanted/non vital services - "sudo apt remove *insert service*"
 ftp 
 mysql
 samba
@@ -119,14 +122,15 @@ nginx
 nv
 found in /etc/
 ftp = sudo apt-get remove pure-ftpd
-18 Insecure file permissions
+
+18 Insecure file permissions (( Max thing P.2 ))
 To the root of a server local file or passwd file
 Chmod -w or -r or -x
 W means write
 R means read
 X means executable
 
-19 visudo
+19 visudo (( max thing P.3 ))
 Only main user (you) can use sudo (or only specified accounts!)
 
 20 Netcat
@@ -141,9 +145,10 @@ Chmod 440 /etc/group
 Chmod -R 444 /etc/ssh
 
 22 Stop receiving bad cookies
-Sysctl -n net.ipv4.tcp_syncookies
+Sysctl -n net.ipv4.tcp_syncookies 
 
-23 Check the /etc/hosts file
+23 Check the /etc/hosts file 
+use - "nano /etc/hosts"
 Remove any other than 127.0.0.1 in ip category
 Don’t touch ipv6
 
@@ -152,7 +157,8 @@ Don’t touch ipv6
 25 Check bad sources
 Sudo nano /etc/apt/sources.list
 
-Tips + Helpful commands
+#tips + helpful commands
+
 Systemctl  - -type=service list-units
 To find where an app is “whereis” so “whereis john” for example
 Ctrl + alt + t opens a terminal window
