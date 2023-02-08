@@ -163,6 +163,17 @@ Sudo nano /etc/apt/sources.list
 
 #tips + helpful commands
 
+crontab: scheduled tasks
+sudo crontab -e edit crontab use nano
+crontab -e ceates a crontab for the user
+m h dom mon dow command
+0 5 * * 1 COMAND HERE
+at 5 am every day COMAND will happen
+put files cron.daily or cron.weekly as an alternative not used often
+
+watch command - reuns a command every 2 seconds
+watch cat /var/log/syslog |grep 'cron' - lists all system logs with cron in
+
 Systemctl  - -type=service list-units
 To find where an app is “whereis” so “whereis john” for example
 Ctrl + alt + t opens a terminal window
