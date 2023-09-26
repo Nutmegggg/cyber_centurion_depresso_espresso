@@ -8,7 +8,7 @@
 #average stuff + explanations
 - terminal - copy + paste ((inside it))
   copy - shift + control + c
-  paste - shift + control + p
+  paste - shift + control + v
 
 - ssh - how to get in
   sudo nano /etc/ssh/sshd_config
